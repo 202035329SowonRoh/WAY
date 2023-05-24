@@ -1,7 +1,5 @@
 package com.example.way;
 
-import android.widget.ImageView;
-
 import io.realm.RealmObject;
 
 public class History extends RealmObject {

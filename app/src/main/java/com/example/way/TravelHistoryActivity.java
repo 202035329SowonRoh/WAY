@@ -15,7 +15,7 @@ import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
 import io.realm.Sort;
 
-public class MainActivity extends AppCompatActivity {
+public class TravelHistoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         addHistoryBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, AddHistoryActivity.class));
+                startActivity(new Intent(TravelHistoryActivity.this, AddHistoryActivity.class));
             }
         });
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        MyAdapter myAdapter = new MyAdapter(getApplicationContext(), historyList);
+        HistoryAdapter myAdapter = new HistoryAdapter(getApplicationContext(), historyList);
         recyclerView.setAdapter(myAdapter);
 
         historyList.addChangeListener(new RealmChangeListener<RealmResults<History>>() {
