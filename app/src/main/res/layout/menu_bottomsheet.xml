@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menu_bottomsheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="150dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:background="@color/gold">
+
+        <!--도전과제 및 그 나라 갯수-->
+        <TextView
+            android:id="@+id/txt_challenge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chlng1"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/txt_numOfCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00/00"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gold"
+        android:padding="30dp">
+
+        <!--버튼 3개-->
+        <ImageButton
+            android:id="@+id/btn_record"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/record"
+            android:layout_margin="10dp"
+            android:scaleType="centerInside"
+            android:background="@color/gold"
+            android:contentDescription="button record"/>
+
+        <ImageButton
+            android:id="@+id/btn_livefeed"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/livefeed"
+            android:layout_margin="10dp"
+            android:scaleType="centerInside"
+            android:background="@color/gold"
+            android:contentDescription="button livefeed"/>
+
+        <ImageButton
+            android:id="@+id/btn_plan"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/plan"
+            android:layout_margin="10dp"
+            android:scaleType="centerInside"
+            android:background="@color/gold"
+            android:contentDescription="button plan"/>
+
+    </LinearLayout>
+
+</LinearLayout>

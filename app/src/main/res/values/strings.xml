@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">WAY_UI_v0.1</string>
+
+    <!--메인 화면-->
+
+    <!--도전 과제-->
+    <string name="chlng1">Welcome!</string>
+    <string name="chlng1_detail">처음 앱 접속</string>
+    <string name="chlng2">The Great First Step!</string>
+    <string name="chlng2_detail">처음 기록</string>
+    <string name="chlng3">First Asia!</string>
+    <string name="chlng3_detail">첫 아시아 기록</string>
+    <string name="chlng4">First Europe!</string>
+    <string name="chlng4_detail">첫 유럽 기록</string>
+    <string name="chlng5">First America!</string>
+    <string name="chlng5_detail">첫 아메리카 기록</string>
+</resources>
