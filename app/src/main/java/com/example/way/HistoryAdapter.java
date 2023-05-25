@@ -17,12 +17,12 @@ import java.text.DateFormat;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHolder> {
 
     Context context;
     RealmResults<History> historyList;
 
-    public MyAdapter(Context context, RealmResults<History> historyList) {
+    public HistoryAdapter(Context context, RealmResults<History> historyList) {
         this.context = context;
         this.historyList = historyList;
     }

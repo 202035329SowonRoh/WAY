@@ -38,7 +38,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-//  for travel history
+    //  for travel history
     implementation "io.realm:realm-gradle-plugin:10.11.0"
 
     // dependency for the country code picker flag
