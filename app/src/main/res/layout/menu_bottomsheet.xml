@@ -46,7 +46,7 @@
 
         <!--버튼 3개-->
         <ImageButton
-            android:id="@+id/btn_record"
+            android:id="@+id/btn_history"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_weight="1"
