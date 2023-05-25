@@ -31,24 +31,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        View bottomSheetView = getLayoutInflater().inflate(R.layout.menu_bottomsheet, null);
-
-        // BottomSheet 안에 있는 버튼을 찾아옵니다.
-        Button historyButton = bottomSheetView.findViewById(R.id.btn_history);
-        Button livefeedButton = bottomSheetView.findViewById(R.id.btn_livefeed);
-        Button planButton = bottomSheetView.findViewById(R.id.btn_plan);
-
-        // BottomSheet 안의 버튼 클릭 이벤트 처리
-        historyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // go to history activity
-                Intent historyIntent = new Intent(MainActivity.this, TravelHistoryActivity.class);
-                startActivity(historyIntent);
-                finish();
-
-            }
-        });
+//        View bottomSheetView = getLayoutInflater().inflate(R.layout.menu_bottomsheet, null);
+//
+//        // BottomSheet 안에 있는 버튼을 찾아옵니다.
+//        ImageButton historyButton = bottomSheetView.findViewById(R.id.btn_history);
+//        ImageButton livefeedButton = bottomSheetView.findViewById(R.id.btn_livefeed);
+//        ImageButton planButton = bottomSheetView.findViewById(R.id.btn_plan);
+//
+//        // BottomSheet 안의 버튼 클릭 이벤트 처리
+//        historyButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // go to history activity
+////                Intent historyIntent = new Intent(MainActivity.this, TravelHistoryActivity.class);
+////                startActivity(historyIntent);
+////                finish();
+//
+//                Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
     }
 
