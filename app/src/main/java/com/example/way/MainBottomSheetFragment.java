@@ -1,8 +1,11 @@
+package com.example.way;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,6 +41,7 @@ public class MainBottomSheetFragment extends BottomSheetDialogFragment {
                     @Override
                     public void onClick(View v) {
                         // 버튼 1 클릭 이벤트 처리
+
                     }
                 });
 
@@ -62,15 +66,8 @@ public class MainBottomSheetFragment extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.menu_bottomsheet, container, false);
 
-        // BottomSheetBehavior 설정
-        BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from((View) view.getParent());
-        bottomSheetBehavior.setPeekHeight(200); // BottomSheet 일부 드러나도록 설정
-        bottomSheetBehavior.setHideable(false); // BottomSheet 숨기지 않도록 설정
-        bottomSheetBehavior.addBottomSheetCallback(bottomSheetCallback);
-
-        return view;
+        return inflater.inflate(R.layout.menu_bottomsheet, container, false);
     }
 
 }

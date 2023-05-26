@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'realm-android'
 }
 
 android {
@@ -40,7 +41,13 @@ dependencies {
 
     //  for travel history
     implementation "io.realm:realm-gradle-plugin:10.11.0"
-
     // dependency for the country code picker flag
     implementation "com.hbb20:ccp:2.6.0"
+
+    //  for plan
+    def room_version = "2.2.3"
+
+    //noinspection GradleDependency
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 }
