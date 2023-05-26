@@ -30,7 +30,7 @@ public class PlanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_plan);
 
         Button plan_btn = (Button) findViewById(R.id.plan_btn);
         plan_btn.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +54,7 @@ public class PlanActivity extends AppCompatActivity {
         home_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), FirstPage.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
 

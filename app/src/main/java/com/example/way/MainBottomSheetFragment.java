@@ -33,9 +33,9 @@ public class MainBottomSheetFragment extends BottomSheetDialogFragment {
                 View bottomSheetView = getLayoutInflater().inflate(R.layout.menu_bottomsheet, null);
 
                 // BottomSheet 안에 있는 버튼을 찾아옵니다.
-                ImageButton historyButton = bottomSheetView.findViewById(R.id.btn_history);
-                ImageButton livefeedButton = bottomSheetView.findViewById(R.id.btn_livefeed);
-                ImageButton planButton = bottomSheetView.findViewById(R.id.btn_plan);
+                ImageButton historyButton = bottomSheetView.findViewById(R.id.button_history);
+                ImageButton livefeedButton = bottomSheetView.findViewById(R.id.button_livefeed);
+                ImageButton planButton = bottomSheetView.findViewById(R.id.button_plan);
 
                 historyButton.setOnClickListener(new View.OnClickListener() {
                     @Override

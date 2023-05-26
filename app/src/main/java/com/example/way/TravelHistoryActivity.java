@@ -20,7 +20,7 @@ public class TravelHistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_travel_history);
 
         MaterialButton addHistoryBtn = findViewById(R.id.addnewhistorybtn);
 

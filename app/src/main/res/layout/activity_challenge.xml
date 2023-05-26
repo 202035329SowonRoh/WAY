@@ -8,16 +8,11 @@
     tools:context=".ChallengeActivity"
     android:id="@+id/chlng_button_layout">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Challenge"
-        android:textSize="30dp"
-        android:textColor="@color/black"
-        android:background="@color/light_gold"
-        android:padding="10dp"
-        android:layout_marginBottom="40dp" />
+        android:text="뒤로"/>
 
     <Button
         android:id="@+id/chlng1"

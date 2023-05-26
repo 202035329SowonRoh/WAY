@@ -55,11 +55,11 @@ public class LiveFeedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_live_feed);
 
         // RecyclerView 초기화
         feedRecyclerView = findViewById(R.id.feedRecyclerView);
-        feedRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        feedRecyclerView.setLayoutManager(new LinearLayoutManager(LiveFeedActivity.this));
 
         // 피드 아이템 목록 생성
         feedItemList = new ArrayList<>();

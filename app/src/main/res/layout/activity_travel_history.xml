@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F3ECB6"
     android:padding="10dp"
-    tools:context=".MainActivity">
+    tools:context=".TravelHistoryActivity">
 
     <TextView
         android:layout_width="wrap_content"

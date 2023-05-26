@@ -1,6 +1,12 @@
 package com.example.way;
 
+import static androidx.core.app.NavUtils.navigateUpFromSameTask;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,5 +19,15 @@ public class ChallengeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge);
 
+        Button backButton = findViewById(R.id.back);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent chlngIntent = new Intent(ChallengeActivity.this, MainActivity.class);
+                startActivity(chlngIntent);
+                finish();
+            }
+        });
     }
 }
