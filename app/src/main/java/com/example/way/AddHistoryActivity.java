@@ -13,7 +13,6 @@ import com.hbb20.CountryCodePicker;
 
 import io.realm.Realm;
 
-
 public class AddHistoryActivity extends AppCompatActivity {
 
     @Override
