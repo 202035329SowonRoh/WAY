@@ -58,5 +58,4 @@ dependencies {
 
     //for map
     implementation 'com.github.devsideal:VectorChildFinder:1.0.0'
-
 }
