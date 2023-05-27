@@ -65,7 +65,6 @@ public class PlanActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
 
-
         add.setOnClickListener(v -> {
             move();
         });
