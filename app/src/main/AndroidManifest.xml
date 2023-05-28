@@ -24,6 +24,9 @@
             android:name=".PlanActivity"
             android:exported="false" />
         <activity
+            android:name=".Event"
+            android:exported="false"/>
+        <activity
             android:name=".AddHistoryActivity"
             android:exported="false" />
         <activity

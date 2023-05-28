@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton btn_challenge = findViewById(R.id.btn_challenge);
 
+        // Challenge Activity 로 이동
         btn_challenge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent chlngIntent = new Intent(MainActivity.this, ChallengeActivity.class);
                 startActivity(chlngIntent);
-                finish();
             }
         });
 
@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             Intent historyIntent = new Intent(MainActivity.this, TravelHistoryActivity.class);
                             startActivity(historyIntent);
-                            finish();
                         }
                     });
 
@@ -64,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                             // 버튼 클릭시 LiveFeed 액티비티로 전환
                             Intent livefeedIntent = new Intent(MainActivity.this, LiveFeedActivity.class);
                             startActivity(livefeedIntent);
-                            finish();
                         }
                     });
 
@@ -75,16 +73,13 @@ public class MainActivity extends AppCompatActivity {
                             // 버튼 클릭시 Plan 액티비티로 전환
                             Intent planIntent = new Intent(MainActivity.this, PlanActivity.class);
                             startActivity(planIntent);
-                            finish();
                         }
                     });
                 }
             }
 
             @Override
-            public void onSlide(@NonNull View view, float v) {
-                // 슬라이드 동작 이벤트 처리 (선택적)
-            }
+            public void onSlide(@NonNull View view, float v) { }
         });
 
     }

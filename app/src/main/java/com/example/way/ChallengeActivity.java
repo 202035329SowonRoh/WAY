@@ -18,16 +18,5 @@ public class ChallengeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge);
-
-        Button backButton = findViewById(R.id.back);
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent chlngIntent = new Intent(ChallengeActivity.this, MainActivity.class);
-                startActivity(chlngIntent);
-                finish();
-            }
-        });
     }
 }

@@ -36,8 +36,8 @@ public class PlanActivity extends AppCompatActivity {
         plan_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getApplicationContext(), PlanActivity.class);
+//                startActivity(intent);
             }
 
         });
@@ -47,15 +47,7 @@ public class PlanActivity extends AppCompatActivity {
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), Event.class);
                 startActivity(intent);
-            }
-
-        });
-        Button home_btn = (Button) findViewById(R.id.home_btn);
-        home_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+                finish();
             }
 
         });

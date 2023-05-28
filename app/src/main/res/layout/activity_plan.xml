@@ -17,12 +17,16 @@
             android:id="@+id/plan_btn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="plan" />
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="plan"/>
 
         <Button
             android:id="@+id/event_btn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
             android:text="event" />
 
     </LinearLayout>
@@ -41,25 +45,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/memorecycler_itemview"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp">
-
-        <Button
-            android:id="@+id/home_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:layout_weight="1"
-            android:background="@color/dark_gold"
-            android:text="Home" />
-
-    </LinearLayout>
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addMemo"
@@ -72,7 +57,8 @@
         android:layout_marginBottom="8dp"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="add button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
