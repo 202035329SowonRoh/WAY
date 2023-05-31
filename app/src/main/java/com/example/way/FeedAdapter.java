@@ -34,10 +34,11 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     @Override
     public void onBindViewHolder(@NonNull FeedViewHolder holder, int position) {
         FeedItem feedItem = feedItemList.get(position);
-        holder.feedImage.setImageResource(feedItem.getImageResource());
+        holder.feedImage.setImageURI(feedItem.getImageUri());
         holder.feedTitle.setText(feedItem.getTitle());
         holder.feedContent.setText(feedItem.getContent());
     }
+
 
     // 이미지 삭제 기능
     public void deleteImage(int position) {

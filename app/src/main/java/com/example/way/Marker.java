@@ -237,12 +237,5 @@ public class Marker extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
     }
 }

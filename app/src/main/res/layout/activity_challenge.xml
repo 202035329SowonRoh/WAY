@@ -73,5 +73,20 @@
 
         android:enabled="false"/>
 
+    <Button
+        android:id="@+id/chlng6"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/chlng6"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:layout_gravity="center"
+
+        android:enabled="false"/>
+
+
+
 
 </LinearLayout>
