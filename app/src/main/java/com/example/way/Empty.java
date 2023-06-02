@@ -18,7 +18,7 @@ public class Empty extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Intent intent = new Intent(this,Marker.class);
+        Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
         finish();
     }

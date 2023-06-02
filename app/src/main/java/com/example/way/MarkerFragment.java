@@ -61,7 +61,7 @@ public class MarkerFragment extends Fragment {
 
         Button apply = rootView.findViewById(R.id.apply_btn);
         ImageView t_map = rootView.findViewById(R.id.map);
-        textView = rootView.findViewById(R.id.textView);
+        //textView = rootView.findViewById(R.id.textView);
         Button add_btn = rootView.findViewById(R.id.add_num);
         Button min_btn = rootView.findViewById(R.id.min_num);
         textView3 = (TextView) rootView.findViewById(R.id.textView3);
@@ -87,7 +87,7 @@ public class MarkerFragment extends Fragment {
         spinnerMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {//event when select spinner
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                textView.setText(countries[position]);//get string from array
+                //textView.setText(countries[position]);//get string from array
                 con_now=spinnerMenu.getSelectedItem().toString();
             }
 
@@ -100,7 +100,7 @@ public class MarkerFragment extends Fragment {
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Empty.class);
+                Intent intent = new Intent(getActivity(), Empty.class);
 
                 startActivity(intent);
 

@@ -70,7 +70,7 @@ public class Marker extends AppCompatActivity {
 
         Button apply = findViewById(R.id.apply_btn);
         ImageView t_map = findViewById(R.id.map);
-        textView = findViewById(R.id.textView);
+        //textView = findViewById(R.id.textView);
         Button add_btn = findViewById(R.id.add_num);
         Button min_btn = findViewById(R.id.min_num);
         textView3 = (TextView) findViewById(R.id.textView3);
@@ -96,7 +96,7 @@ public class Marker extends AppCompatActivity {
         spinnerMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {//event when select spinner
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                textView.setText(countries[position]);//get string from array
+                //textView.setText(countries[position]);//get string from array
                 con_now=spinnerMenu.getSelectedItem().toString();
                 Toast.makeText(Marker.this , con_now, Toast.LENGTH_SHORT).show();
             }
