@@ -3,15 +3,18 @@ package com.example.way;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.opengl.GLES30;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,13 +25,30 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 public class MainActivity extends AppCompatActivity {
+    private FrameLayout container;
+
+    int countNumOfCountry;
 
     TextView challenge;
+    TextView numOfCountry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        container = findViewById(R.id.fragmentFrame);
+
+        // countNumOfCountry
+        
+
+        // Fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        MarkerFragment markerFragment = new MarkerFragment();
+        fragmentTransaction.add(R.id.fragmentFrame, markerFragment);
+        fragmentTransaction.commit();
 
         ImageButton btn_challenge = findViewById(R.id.btn_challenge);
         // Challenge Activity 로 이동
@@ -50,7 +70,14 @@ public class MainActivity extends AppCompatActivity {
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View view, int newState) {
+
+                // BottomSheet 이 위로 올라왔을 때
                 if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+
+                    //BottomSheet이 아래로 내려갔을 때 Fragment Globe로 변환
+                    GlobeFragment globeFragment = new GlobeFragment();
+                    replaceFragment(globeFragment);
+
                     // 버튼 클릭시 History 액티비티로 전환
                     ImageButton historyButton = bottomSheet.findViewById(R.id.button_history);
                     historyButton.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(planIntent);
                         }
                     });
+                    
+                } else {
+                    MarkerFragment markerFragment = new MarkerFragment();
+                    replaceFragment(markerFragment);
                 }
             }
 
@@ -87,13 +118,6 @@ public class MainActivity extends AppCompatActivity {
             public void onSlide(@NonNull View view, float v) { }
         });
 
-        // Fragment
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        MarkerFragment markerFragment = new MarkerFragment();
-        fragmentTransaction.replace(R.id.fragmentFrame, markerFragment);
-        fragmentTransaction.commit();
     }
 
     @Override
@@ -115,4 +139,21 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    // Fragment 교체를 수행하는 메소드
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentFrame, fragment);
+        fragmentTransaction.commit();
+    }
+
+    public void processDataFromFragment(int data) {
+        // 하단 메뉴 레이아웃 가져오기
+        View bottomSheet = findViewById(R.id.menu_bottomsheet);
+        numOfCountry = bottomSheet.findViewById(R.id.txt_numOfCountry);
+
+        numOfCountry.setText(String.valueOf(data));
+    }
+
 }

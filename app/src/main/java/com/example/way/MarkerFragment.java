@@ -3,10 +3,12 @@ package com.example.way;
 import static io.realm.Realm.getApplicationContext;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +78,7 @@ public class MarkerFragment extends Fragment {
         VectorDrawableCompat.VFullPath path5 = vector.findPathByName("칠레");
         VectorDrawableCompat.VFullPath path6 = vector.findPathByName("멕시코");
 
-
+        sendDataToMainActivity(countNumOfCountry());
 
         Spinner spinnerMenu = rootView.findViewById(R.id.country_spinner);
         final String[] countries = getResources().getStringArray(R.array.country);//get list form country
@@ -103,7 +105,12 @@ public class MarkerFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), Empty.class);
 
                 startActivity(intent);
+//                int data = countNumOfCountry();
+//
+//                Log.i("vi_ch",String.valueOf(vi_ch));
+//                Log.i("TEST",String.valueOf(data));
 
+                sendDataToMainActivity(countNumOfCountry());
             }
         });
 
@@ -160,6 +167,7 @@ public class MarkerFragment extends Fragment {
                     editor.apply();
 
                 }
+                Log.i("vi_ch",String.valueOf(vi_ch));
             }
         });
         min_btn.setOnClickListener(new View.OnClickListener() {
@@ -266,5 +274,41 @@ public class MarkerFragment extends Fragment {
         }
 
         return rootView;
+    }
+
+    // 변수를 전달하고자 하는 로직이 있는 메서드
+    private void sendDataToMainActivity(int data) {
+        if (getActivity() instanceof MainActivity) {
+            MainActivity mainActivity = (MainActivity) getActivity();
+            mainActivity.processDataFromFragment(data);
+        }
+    }
+
+    public int countNumOfCountry() {
+        int count = 0;
+
+        if(vi_ch > 0){
+            count++;
+        }
+        if(vi_j > 0){
+            count++;
+        }
+        if(vi_k > 0){
+            count++;
+        }
+        if(vi_c > 0){
+            count++;
+        }
+        if(vi_j > 0){
+            count++;
+        }
+        if(vi_m > 0){
+            count++;
+        }
+        if(vi_a > 0){
+            count++;
+        }
+
+        return count;
     }
 }

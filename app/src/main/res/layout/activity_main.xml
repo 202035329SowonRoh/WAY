@@ -14,6 +14,7 @@
         android:src="@drawable/challenge"
         android:scaleType="centerInside"
         android:background="@color/light_gold"
+        android:layout_margin="10dp"
         android:layout_gravity="right"
         android:contentDescription="btn_challenge"/>
 
