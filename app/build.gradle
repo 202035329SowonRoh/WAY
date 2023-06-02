@@ -57,5 +57,6 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:$room_version"
 
     //for map
-    implementation 'com.github.devsideal:VectorChildFinder:1.0.0'
+    implementation 'com.github.devsideal:VectorChildFinder:1.0.0' //벡터부여를 위한 라이브러리동기화
+
 }

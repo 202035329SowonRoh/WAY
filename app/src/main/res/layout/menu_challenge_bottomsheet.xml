@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/light_gold"
+    app:behavior_hideable="true"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:id="@+id/menu_challenge_bottomsheet">
+
+    <TextView
+        android:id="@+id/chlng_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="도전 과제 제목"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/chlng_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="도전 과제 내용"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_margin="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/cancel_chlng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/save_chlng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저장"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

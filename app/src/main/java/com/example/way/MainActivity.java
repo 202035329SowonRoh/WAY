@@ -1,6 +1,7 @@
 package com.example.way;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -18,6 +20,8 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView challenge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent chlngIntent = new Intent(MainActivity.this, ChallengeActivity.class);
-                startActivity(chlngIntent);
+                startActivityForResult(chlngIntent,100);
             }
         });
 
@@ -84,4 +88,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // 하단 메뉴 레이아웃 가져오기
+        View bottomSheet = findViewById(R.id.menu_bottomsheet);
+        challenge = bottomSheet.findViewById(R.id.txt_challenge);
+
+        if (requestCode == 100 & resultCode == RESULT_OK && data != null) {
+            int stringId = data.getIntExtra("selectedButton", R.string.chlng1);
+            String selectedButtonText = getString(stringId);
+
+            // 선택한 버튼의 텍스트를 TextView에 설정
+            challenge.setText(selectedButtonText);
+        }
+    }
 }
