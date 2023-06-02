@@ -17,6 +17,8 @@
         <activity
             android:name=".LiveFeedActivity"
             android:exported="false" />
+        <activity android:name=".Marker"
+            android:exported="false"/>
         <activity
             android:name=".SaveMemoActivity"
             android:exported="false" />
@@ -43,7 +45,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

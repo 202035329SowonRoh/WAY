@@ -18,14 +18,14 @@
         android:layout_gravity="right"
         android:contentDescription="btn_challenge"/>
 
-    <ImageView
-        android:id="@+id/globe_view"
+    <FrameLayout
+        android:id="@+id/fragmentFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerInside"
-        android:src="@drawable/earth"
-        android:padding="40dp"
-        />
+        android:layout_height="wrap_content">
+
+<!--        지도 추가-->
+
+    </FrameLayout>
 
     <include layout="@layout/menu_bottomsheet"/>
 

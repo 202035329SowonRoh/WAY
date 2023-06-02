@@ -1,6 +1,7 @@
 package com.example.way;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.vectordrawable.graphics.drawable.*;
 
 import android.app.Activity;

@@ -3,6 +3,8 @@ package com.example.way;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.opengl.GLES30;
@@ -29,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageButton btn_challenge = findViewById(R.id.btn_challenge);
-
         // Challenge Activity 로 이동
         btn_challenge.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +87,13 @@ public class MainActivity extends AppCompatActivity {
             public void onSlide(@NonNull View view, float v) { }
         });
 
+        // Fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        MarkerFragment markerFragment = new MarkerFragment();
+        fragmentTransaction.replace(R.id.fragmentFrame, markerFragment);
+        fragmentTransaction.commit();
     }
 
     @Override
