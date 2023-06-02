@@ -106,10 +106,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == 100 & resultCode == RESULT_OK && data != null) {
             int stringId = data.getIntExtra("selectedButton", R.string.chlng1);
-            String selectedButtonText = getString(stringId);
 
-            // 선택한 버튼의 텍스트를 TextView에 설정
-            challenge.setText(selectedButtonText);
+            if (stringId != 0xffffffff) {
+                String selectedButtonText = getString(stringId);
+
+                // 선택한 버튼의 텍스트를 TextView에 설정
+                challenge.setText(selectedButtonText);
+            }
         }
     }
 }

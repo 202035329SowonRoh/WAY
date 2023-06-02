@@ -14,17 +14,17 @@
         android:src="@drawable/challenge"
         android:scaleType="centerInside"
         android:background="@color/light_gold"
-        android:layout_margin="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
         android:layout_gravity="right"
         android:contentDescription="btn_challenge"/>
 
     <FrameLayout
         android:id="@+id/fragmentFrame"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="500dp">
 
 <!--        지도 추가-->
-
     </FrameLayout>
 
     <include layout="@layout/menu_bottomsheet"/>

@@ -1,10 +1,10 @@
 package com.example.way;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.vectordrawable.graphics.drawable.*;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -26,9 +26,13 @@ import com.devs.vectorchildfinder.VectorDrawableCompat;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Handler;
 import java.util.logging.Logger;
+import android.os.Bundle;
+
 
 public class Marker extends AppCompatActivity {
+
 
     SharedPreferences pref;//프리퍼런스
     SharedPreferences.Editor editor;//에디터
@@ -49,6 +53,9 @@ public class Marker extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
+
         pref = getSharedPreferences("pref", Activity.MODE_PRIVATE);
         editor = pref.edit();
 
@@ -58,14 +65,15 @@ public class Marker extends AppCompatActivity {
         vi_c = pref.getInt("vi_c", 0);
         vi_a = pref.getInt("vi_a", 0);
         vi_m = pref.getInt("vi_m", 0);
-
         setContentView(R.layout.marker_map);
+
+        Button apply = findViewById(R.id.apply_btn);
         ImageView t_map = findViewById(R.id.map);
         textView = findViewById(R.id.textView);
         Button add_btn = findViewById(R.id.add_num);
         Button min_btn = findViewById(R.id.min_num);
         textView3 = (TextView) findViewById(R.id.textView3);
-        textView3.setText(vi_ch+"");
+        textView3.setText(con_now +"");
 
         VectorChildFinder vector = new VectorChildFinder(this, R.drawable.ic_blank_map,t_map);
 
@@ -99,6 +107,16 @@ public class Marker extends AppCompatActivity {
             }
         });
 
+        apply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Empty.class);
+
+                startActivity(intent);
+
+            }
+        });
+
 
         add_btn.setOnClickListener(new View.OnClickListener() {//add +1 to int array visit
             @Override
@@ -108,7 +126,7 @@ public class Marker extends AppCompatActivity {
                 if(con_now.equals(compare[0])){
 
                     vi_ch++;
-                    textView3.setText(vi_ch+"");
+                    textView3.setText(vi_ch+"");//각각의 카운터의 가감을 보여줌
                     editor.putInt("vi_ch",vi_ch);
                     editor.apply();
 
@@ -116,6 +134,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[1])){
 
                     vi_j++;
+                    textView3.setText(vi_j+"");
                     editor.putInt("vi_j",vi_j);
                     editor.apply();
 
@@ -123,6 +142,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[2])){
 
                     vi_k++;
+                    textView3.setText(vi_k+"");
                     editor.putInt("vi_k",vi_k);
                     editor.apply();
 
@@ -130,6 +150,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[3])){
 
                     vi_a++;
+                    textView3.setText(vi_a+"");
                     editor.putInt("vi_a",vi_a);
                     editor.apply();
 
@@ -137,6 +158,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[4])){
 
                     vi_c++;
+                    textView3.setText(vi_c+"");
                     editor.putInt("vi_c",vi_c);
                     editor.apply();
 
@@ -144,6 +166,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[5])){
 
                     vi_m++;
+                    textView3.setText(vi_m+"");
                     editor.putInt("vi_m",vi_m);
                     editor.apply();
 
@@ -165,6 +188,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[1])){
 
                     vi_j--;
+                    textView3.setText(vi_j+"");
                     editor.putInt("vi_j",vi_j);
                     editor.apply();
 
@@ -172,6 +196,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[2])){
 
                     vi_k--;
+                    textView3.setText(vi_k+"");
                     editor.putInt("vi_k",vi_k);
                     editor.apply();
 
@@ -179,6 +204,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[3])){
 
                     vi_a--;
+                    textView3.setText(vi_a+"");
                     editor.putInt("vi_a",vi_a);
                     editor.apply();
 
@@ -186,6 +212,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[4])){
 
                     vi_c--;
+                    textView3.setText(vi_c+"");
                     editor.putInt("vi_c",vi_c);
                     editor.apply();
 
@@ -193,6 +220,7 @@ public class Marker extends AppCompatActivity {
                 }else if(con_now.equals(compare[5])){
 
                     vi_m--;
+                    textView3.setText(vi_m+"");
                     editor.putInt("vi_m",vi_m);
                     editor.apply();
 
@@ -204,39 +232,51 @@ public class Marker extends AppCompatActivity {
             path1.setFillColor(Color.RED);
         }else if(vi_ch>=6&&vi_ch<9){
             path1.setFillColor(Color.YELLOW);
+        }else if(vi_ch>=9){
+            path1.setFillColor(Color.BLUE);
         }
 
         if(vi_j>2&&vi_j<6){
             path2.setFillColor(Color.RED);
         }else if(vi_j>=6&&vi_j<9){
             path2.setFillColor(Color.YELLOW);
+        }else if(vi_j>=9){
+            path1.setFillColor(Color.BLUE);
         }
 
         if(vi_k>2&&vi_k<6){
             path3.setFillColor(Color.RED);
         }else if(vi_k>=6&&vi_k<9){
             path3.setFillColor(Color.YELLOW);
+        }else if(vi_k>=9){
+            path1.setFillColor(Color.BLUE);
         }
 
         if(vi_a>2&&vi_a<6){
             path4.setFillColor(Color.RED);
         }else if(vi_a>=6&&vi_a<9){
             path4.setFillColor(Color.YELLOW);
+        }else if(vi_a>=9){
+            path1.setFillColor(Color.BLUE);
         }
 
         if(vi_c>2&&vi_c<6){
             path5.setFillColor(Color.RED);
         }else if(vi_c>=6&&vi_c<9){
             path5.setFillColor(Color.YELLOW);
+        }else if(vi_c>=9){
+            path1.setFillColor(Color.BLUE);
         }
 
         if(vi_m>2&&vi_m<6){
             path6.setFillColor(Color.RED);
         }else if(vi_m>=6&&vi_m<9){
             path6.setFillColor(Color.YELLOW);
+        }else if(vi_m>=9){
+            path1.setFillColor(Color.BLUE);
         }
 
 
-        
+
     }
 }
