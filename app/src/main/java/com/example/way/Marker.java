@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.vectordrawable.graphics.drawable.*;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -97,8 +98,7 @@ public class Marker extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 textView.setText(countries[position]);//get string from array
                 con_now=spinnerMenu.getSelectedItem().toString();
-                Toast.makeText(Marker.this, con_now, Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(Marker.this , con_now, Toast.LENGTH_SHORT).show();
             }
 
             @Override
