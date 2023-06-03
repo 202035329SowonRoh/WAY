@@ -241,7 +241,7 @@ public class Marker extends AppCompatActivity {
         }else if(vi_j>=6&&vi_j<9){
             path2.setFillColor(Color.YELLOW);
         }else if(vi_j>=9){
-            path1.setFillColor(Color.BLUE);
+            path2.setFillColor(Color.BLUE);
         }
 
         if(vi_k>2&&vi_k<6){
@@ -249,7 +249,7 @@ public class Marker extends AppCompatActivity {
         }else if(vi_k>=6&&vi_k<9){
             path3.setFillColor(Color.YELLOW);
         }else if(vi_k>=9){
-            path1.setFillColor(Color.BLUE);
+            path3.setFillColor(Color.BLUE);
         }
 
         if(vi_a>2&&vi_a<6){
@@ -257,7 +257,7 @@ public class Marker extends AppCompatActivity {
         }else if(vi_a>=6&&vi_a<9){
             path4.setFillColor(Color.YELLOW);
         }else if(vi_a>=9){
-            path1.setFillColor(Color.BLUE);
+            path4.setFillColor(Color.BLUE);
         }
 
         if(vi_c>2&&vi_c<6){
@@ -265,7 +265,7 @@ public class Marker extends AppCompatActivity {
         }else if(vi_c>=6&&vi_c<9){
             path5.setFillColor(Color.YELLOW);
         }else if(vi_c>=9){
-            path1.setFillColor(Color.BLUE);
+            path5.setFillColor(Color.BLUE);
         }
 
         if(vi_m>2&&vi_m<6){
@@ -273,7 +273,7 @@ public class Marker extends AppCompatActivity {
         }else if(vi_m>=6&&vi_m<9){
             path6.setFillColor(Color.YELLOW);
         }else if(vi_m>=9){
-            path1.setFillColor(Color.BLUE);
+            path6.setFillColor(Color.BLUE);
         }
 
 
