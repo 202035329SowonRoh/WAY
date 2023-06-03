@@ -27,6 +27,11 @@ import javax.microedition.khronos.opengles.GL10;
 public class MainActivity extends AppCompatActivity {
     private FrameLayout container;
 
+    int firstStep = 0;
+    int enableAsia = 0;
+    int enableAmerica = 0;
+    int enableAustralia = 0;
+
     int countNumOfCountry;
 
     TextView challenge;
@@ -46,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        MarkerFragment markerFragment = new MarkerFragment();
+        MarkerFragment markerFragment = new MarkerFragment(MainActivity.this);
         fragmentTransaction.add(R.id.fragmentFrame, markerFragment);
         fragmentTransaction.commit();
 
@@ -56,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent chlngIntent = new Intent(MainActivity.this, ChallengeActivity.class);
+                chlngIntent.putExtra("firstStep",firstStep);
+                chlngIntent.putExtra("enableAsia",enableAsia);
+                chlngIntent.putExtra("enableAmerica",enableAmerica);
+                chlngIntent.putExtra("enableAustralia",enableAustralia);
+
                 startActivityForResult(chlngIntent,100);
             }
         });
@@ -109,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                     });
                     
                 } else {
-                    MarkerFragment markerFragment = new MarkerFragment();
+                    MarkerFragment markerFragment = new MarkerFragment(MainActivity.this);
                     replaceFragment(markerFragment);
                 }
             }
@@ -154,6 +164,14 @@ public class MainActivity extends AppCompatActivity {
         numOfCountry = bottomSheet.findViewById(R.id.txt_numOfCountry);
 
         numOfCountry.setText(String.valueOf(data));
+    }
+
+    // MarkerFragment에서 데이터의 변경을 수신하는 메서드입니다.
+    public void setMarkerData(int data1, int data2, int data3, int data4) {
+        firstStep = data1;
+        enableAsia = data2;
+        enableAmerica = data3;
+        enableAustralia = data4;
     }
 
 }

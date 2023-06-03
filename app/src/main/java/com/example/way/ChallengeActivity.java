@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
@@ -25,17 +26,16 @@ public class ChallengeActivity extends AppCompatActivity {
 
     int selectedButtonId = -1;
     int selectedButtonText = -1;
+
+    int firstStep = 0;
+    int enableAsia = 0;
+    int enableAmerica = 0;
+    int enableAustralia = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_challenge);
-
-        Button btn_chlng1 = findViewById(R.id.chlng1);
-        Button btn_chlng2 = findViewById(R.id.chlng2);
-        Button btn_chlng3 = findViewById(R.id.chlng3);
-        Button btn_chlng4 = findViewById(R.id.chlng4);
-        Button btn_chlng5 = findViewById(R.id.chlng5);
-        Button btn_chlng6 = findViewById(R.id.chlng6);
 
         View bottomSheet = findViewById(R.id.menu_challenge_bottomsheet);
         BottomSheetBehavior<View> bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
@@ -47,6 +47,38 @@ public class ChallengeActivity extends AppCompatActivity {
 
         Button cancel = findViewById(R.id.cancel_chlng);
         Button save = findViewById(R.id.save_chlng);
+
+        Button btn_chlng1 = findViewById(R.id.chlng1);
+        Button btn_chlng2 = findViewById(R.id.chlng2);
+        Button btn_chlng3 = findViewById(R.id.chlng3);
+        Button btn_chlng4 = findViewById(R.id.chlng4);
+        Button btn_chlng5 = findViewById(R.id.chlng5);
+        Button btn_chlng6 = findViewById(R.id.chlng6);
+
+        // challenge 조건 확인 및 enabled 설정 변경
+        Intent intent = getIntent();
+        firstStep = intent.getIntExtra("firstStep",firstStep);
+        enableAsia = intent.getIntExtra("enableAsia",enableAsia);
+        enableAmerica = intent.getIntExtra("enableAmerica",enableAmerica);
+        enableAustralia = intent.getIntExtra("enableAustralia",enableAustralia);
+
+        if (firstStep != 0) {
+            //Toast.makeText(ChallengeActivity.this,getResources().getString(R.string.chlng2) + " is unlocked", Toast.LENGTH_SHORT).show();
+            btn_chlng2.setEnabled(true);
+        }
+        if(enableAsia != 0) {
+            //Toast.makeText(ChallengeActivity.this,getResources().getString(R.string.chlng3) + " is unlocked", Toast.LENGTH_SHORT).show();
+            btn_chlng3.setEnabled(true);
+        }
+        if(enableAmerica != 0) {
+            //Toast.makeText(ChallengeActivity.this,getResources().getString(R.string.chlng5) + " is unlocked", Toast.LENGTH_SHORT).show();
+            btn_chlng5.setEnabled(true);
+        }
+        if(enableAustralia != 0) {
+            //Toast.makeText(ChallengeActivity.this,getResources().getString(R.string.chlng6) + " is unlocked", Toast.LENGTH_SHORT).show();
+            btn_chlng6.setEnabled(true);
+        }
+
 
         btn_chlng1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,4 +190,43 @@ public class ChallengeActivity extends AppCompatActivity {
         setResult(RESULT_OK, intent);
         super.onBackPressed();
     }
+
+//    public void buttonEnabled() {
+//
+//        MarkerFragment markerFragment = new MarkerFragment();
+//
+//        Button btn_chlng2 = findViewById(R.id.chlng2);
+//        Button btn_chlng3 = findViewById(R.id.chlng3);
+//        Button btn_chlng5 = findViewById(R.id.chlng5);
+//        Button btn_chlng6 = findViewById(R.id.chlng6);
+//
+//        int count = markerFragment.countNumOfCountry();
+//
+//        Log.i("count",String.valueOf(count));
+//
+//        int[] countries = {markerFragment.vi_ch, markerFragment.vi_j, markerFragment.vi_k, markerFragment.vi_c, markerFragment.vi_a, markerFragment.vi_m};
+//
+//        Log.i("vi_ch",String.valueOf(countries[0]));
+//
+//        // first step
+//        if (count != 0) {
+//            btn_chlng2.setEnabled(true);
+//        }
+//
+//        // 아시아
+//        if(countries[0] > 0 || countries[1] > 0 || countries[2] > 0) {
+//            btn_chlng3.setEnabled(true);
+//        }
+//
+//        // 아메리카
+//        if(countries[3] > 0 || countries[5] > 0) {
+//            btn_chlng5.setEnabled(true);
+//        }
+//
+//        // 오스트리아
+//        if(countries[4] > 0) {
+//            btn_chlng6.setEnabled(true);
+//        }
+//
+//    }
 }

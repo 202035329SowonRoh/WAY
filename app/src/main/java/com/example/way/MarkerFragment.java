@@ -29,6 +29,7 @@ import com.devs.vectorchildfinder.VectorDrawableCompat;
 
 public class MarkerFragment extends Fragment {
 
+    private MainActivity mainActivity;
     SharedPreferences pref;//프리퍼런스
     SharedPreferences.Editor editor;//에디터
     int vi_ch; //여행지 정보를 저장할 변수
@@ -44,6 +45,17 @@ public class MarkerFragment extends Fragment {
     int[] count={0,0,0,0,0,0};
     int[] visit={0,0,0,0,0,0};//number of visits by country
     String con_now="";
+    
+    // challenge 에 전달할 변수
+    int firstStep = 0;
+    int enableAsia = 0;
+    int enableAmerica = 0;
+    int enableAustralia = 0;
+
+    // 생성자에서 MainActivity 객체를 전달받습니다.
+    public MarkerFragment(MainActivity activity) {
+        mainActivity = activity;
+    }
 
     @Nullable
     @Override
@@ -105,10 +117,6 @@ public class MarkerFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), Empty.class);
 
                 startActivity(intent);
-//                int data = countNumOfCountry();
-//
-//                Log.i("vi_ch",String.valueOf(vi_ch));
-//                Log.i("TEST",String.valueOf(data));
 
                 sendDataToMainActivity(countNumOfCountry());
             }
@@ -273,6 +281,9 @@ public class MarkerFragment extends Fragment {
             path1.setFillColor(Color.BLUE);
         }
 
+        buttonEnabled();
+        mainActivity.setMarkerData(firstStep, enableAsia, enableAmerica, enableAustralia);
+
         return rootView;
     }
 
@@ -308,4 +319,35 @@ public class MarkerFragment extends Fragment {
 
         return count;
     }
+
+    public void buttonEnabled() {
+
+        int count = countNumOfCountry();
+
+        Log.i("count",String.valueOf(count));
+
+        Log.i("vi_ch",String.valueOf(vi_ch));
+
+        // first step
+        if (count != 0) {
+            firstStep = 1;
+        }
+
+        // 아시아
+        if(vi_ch > 0 || vi_j > 0 || vi_k > 0) {
+            enableAsia = 1;
+        }
+
+        // 아메리카
+        if(vi_m > 0 || vi_c > 0) {
+            enableAmerica = 1;
+        }
+
+        // 오스트리아
+        if(vi_a > 0) {
+            enableAustralia = 1;
+        }
+
+    }
+
 }

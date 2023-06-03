@@ -14,8 +14,8 @@
     <string name="chlng4_detail">첫 유럽 여행</string>
     <string name="chlng5">First America!</string>
     <string name="chlng5_detail">첫 아메리카 여행</string>
-    <string name="chlng6">First Africa</string>
-    <string name="chlng6_detail">첫 아프리카 여행</string>
+    <string name="chlng6">First Australia</string>
+    <string name="chlng6_detail">첫 오스트레일리아 여행</string>
     <string name="title_activity_main2">MainActivity2</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
