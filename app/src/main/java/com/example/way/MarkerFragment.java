@@ -299,9 +299,6 @@ public class MarkerFragment extends Fragment {
         if(vi_c > 0){
             count++;
         }
-        if(vi_j > 0){
-            count++;
-        }
         if(vi_m > 0){
             count++;
         }
